@@ -6,10 +6,8 @@
 </template>
 
 <script>
-import Test from './Test'
 export default {
   name: 'HelloWorld',
-  components: {Test},
   data () {
     return {
       msg: 'Home Page(cpnt: HelloWorld.vue)'

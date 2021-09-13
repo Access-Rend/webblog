@@ -1,5 +1,5 @@
 <template>
-    <div class = 'Test'>
+    <div class = 'test-app'>
         {{message}}
         我日你妈
     </div>
@@ -7,7 +7,7 @@
 
 <script>
 export default{
-  name: 'Firts',
+  name: 'Test',
   data () {
     return {message: 'Test component(cpnt: Test)'}
   }

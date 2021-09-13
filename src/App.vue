@@ -1,20 +1,40 @@
 <template>
   <div id="app">
-    <ul>
-      <a href="Test">Test (a标签)</a>
-      <router-link to="Test">Test (router-link to 标签)</router-link>
-    </ul>
-    <ul>
-      <a href="HelloWorld">HelloWorld (a标签)</a>
-      <router-link to="HelloWorld">HelloWorld (router-link to 标签)</router-link>
-    </ul>
+    <TopBar>
+      <TopItem v-for="item in TopList" :path="item.path" :color="item.color" :key="item.path">
+        <img slot="icon" :src="item.image" alt="">
+        <img slot="icon-active" :src="item.image_active" alt="">
+        <span slot="text">{{ item.text }}</span>
+      </TopItem>
+    </TopBar>
+    <router-view></router-view>
     <img src="./assets/logo.png">
   </div>
 </template>
 
 <script>
+
+import TopBar from './components/Bar/TopBar'
+import TopItem from './components/Bar/TopItem'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    TopItem, TopBar
+  },
+  data () {
+    return {
+      TopList: [
+        {
+          path: '/articles',
+          color: 'red',
+          image: require('./assets/img/topbar/articles.png'),
+          image_active: require('./assets/img/topbar/articles_active.png'),
+          text: '文章'
+        }
+      ]
+    }
+  }
 }
 </script>
 
