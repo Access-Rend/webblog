@@ -9,6 +9,7 @@
       <router-link to="HelloWorld">HelloWorld (router-link to 标签)</router-link>
     </ul>
     <img src="./assets/logo.png">
+    <router-view></router-view>
   </div>
 </template>
 
